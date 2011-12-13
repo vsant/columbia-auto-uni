@@ -1,0 +1,53 @@
+<html>
+<head><title>Columbia Auto UNI Options</title></head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+  localStorage["uni"] = document.getElementById("uni").value;
+  localStorage["pw"]  = document.getElementById("pw").value;
+  
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 1000);
+}
+
+// Restores saved options from localStorage.
+function restore_options() {
+  var data_uni = localStorage["uni"];
+  if (null != data_uni)
+    document.getElementById("uni").value = data_uni;
+  var data_pw = localStorage["pw"];
+  if (null != data_pw)
+    document.getElementById("pw").value = data_pw;
+}
+
+</script>
+
+<body onLoad="restore_options()">
+
+<style>
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 10pt;
+  text-align: center;
+  color: #000;
+}
+</style>
+
+<h1>Columbia Auto UNI: Options</h1>
+<img src="icon128.png" /><br /><br />
+This extension auto-completes Columbia UNI logins if you provide the extension<br />
+with a password.  <b>NB: the password you provide below will be saved in<br />
+plain text to the browser's "local storage".</b>  To delete this saved data,<br />
+resave an empty password or simply delete this extension.
+<br /><br />
+<b>UNI:</b> <input id="uni" type="text" /><br />
+<b>PW:</b> <input id="pw" type="password" /><br />
+<button onClick="save_options()">Save</button><br /><br />
+<div id="status" style="color: #090; font-weight:bold;"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "Columbia Auto UNI",
+  "version": "1.0",
+  "description": "Auto-completes Columbia UNI logins",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "options_page": "options.html",
+  "background_page": "background.html",
+  "content_scripts": [{
+    "all_frames": true,
+    "matches":   ["https://wind.columbia.edu/*",
+                  "https://ssol.columbia.edu/*",
+                  "https://courseworks.columbia.edu/*",
+                  "https://newcourseworks.columbia.edu/*"],
+    "js":        ["inject.js"]
+  }],
+  "permissions": ["https://wind.columbia.edu/",
+                  "https://ssol.columbia.edu/",
+                  "https://courseworks.columbia.edu/",
+                  "https://newcourseworks.columbia.edu/"],
+  "update_url": "http://www.hcs.harvard.edu/vsant/columbia-auto-uni/updates.xml"
+}
