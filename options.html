@@ -23,6 +23,8 @@ function restore_options() {
   var data_pw = localStorage["pw"];
   if (null != data_pw)
     document.getElementById("pw").value = data_pw;
+
+  document.getElementById("uni").focus();
 }
 
 </script>
@@ -45,9 +47,11 @@ with a password.  <b>NB: the password you provide below will be saved in<br />
 plain text to the browser's "local storage".</b>  To delete this saved data,<br />
 resave an empty password or simply delete this extension.
 <br /><br />
-<b>UNI:</b> <input id="uni" type="text" /><br />
-<b>PW:</b> <input id="pw" type="password" /><br />
-<button onClick="save_options()">Save</button><br /><br />
+<form action="javascript:save_options();">
+  <b>UNI:</b> <input id="uni" type="text" /><br />
+  <b>PW:</b> <input id="pw" type="password" /><br />
+  <input type="submit" value="Save" /><br /><br />
+</form>
 <div id="status" style="color: #090; font-weight:bold;"></div>
 </body>
 </html>
