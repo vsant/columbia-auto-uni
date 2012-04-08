@@ -37,7 +37,10 @@ chrome.extension.sendRequest({method: "getUniPw"}, function(response) {
       {
         uni.value  = UNI;
         pass.value = PASS;
-        document.forms[0].submit.click()
+        if (location.href.indexOf("newcourseworks.columbia.edu/portal/relogin") != -1)
+          document.forms[0].submit()
+        else
+          document.forms[0].submit.click()
       }
     }
 
