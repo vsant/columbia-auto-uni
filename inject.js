@@ -22,14 +22,13 @@ chrome.extension.sendRequest({method: "getUniPw"}, function(response) {
       document.forms[0].wind_lg.click();
     }
 
-    /* Newcourseworks */
-    if (location.href.indexOf("newcourseworks.columbia.edu/welcome/") != -1)
+    if (location.href.indexOf("courseworks.columbia.edu/welcome/") != -1)
     {
       location.href = document.getElementsByClassName("button")[0].href;
     }
 
-    if ((location.href.indexOf("newcourseworks.columbia.edu/portal/relogin") != -1) ||
-        (location.href.indexOf("newcourseworks.columbia.edu/portal/login") != -1))
+    if ((location.href.indexOf("courseworks.columbia.edu/portal/relogin") != -1) ||
+        (location.href.indexOf("courseworks.columbia.edu/portal/login") != -1))
     {
       var uni  = document.getElementById("eid");
       var pass = document.getElementById("pw");
@@ -37,7 +36,7 @@ chrome.extension.sendRequest({method: "getUniPw"}, function(response) {
       {
         uni.value  = UNI;
         pass.value = PASS;
-        if (location.href.indexOf("newcourseworks.columbia.edu/portal/relogin") != -1)
+        if (location.href.indexOf("courseworks.columbia.edu/portal/relogin") != -1)
           document.forms[0].submit()
         else
           document.forms[0].submit.click()
