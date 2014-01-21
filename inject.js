@@ -43,6 +43,19 @@ chrome.extension.sendRequest({method: "getUniPw"}, function(response) {
       }
     }
 
+    /* CAS */
+    if (location.href.indexOf("cas.columbia.edu/cas/login") != -1)
+    {
+      var uni  = document.getElementById("username");
+      var pass = document.getElementById("password");
+      if (uni != null && pass != null)
+      {
+        uni.value  = UNI;
+        pass.value = PASS;
+        document.forms[0].submit.click()
+      }
+    }
+
     /* SSOL */
     if (location.href.indexOf("ssol.columbia.edu") != -1)
     {

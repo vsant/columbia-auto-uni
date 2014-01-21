@@ -14,12 +14,14 @@
     "all_frames": true,
     "matches":   ["https://wind.columbia.edu/*",
                   "https://ssol.columbia.edu/*",
+                  "https://cas.columbia.edu/*",
                   "https://courseworks.columbia.edu/*",
                   "https://newcourseworks.columbia.edu/*"],
     "js":        ["inject.js"]
   }],
   "permissions": ["https://wind.columbia.edu/",
                   "https://ssol.columbia.edu/",
+                  "https://cas.columbia.edu/",
                   "https://courseworks.columbia.edu/",
                   "https://newcourseworks.columbia.edu/"],
   "homepage_url": "http://www.hcs.harvard.edu/vsant/columbia-auto-uni/"
