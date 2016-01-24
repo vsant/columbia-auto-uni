@@ -16,15 +16,16 @@ chrome.extension.sendRequest({method: "getUniPw"}, function(response) {
       }
     }
 
-    /* Courseworks */
+    /* Old Courseworks */
     if (location.href.indexOf("courseworks.columbia.edu/cms/enter.cfm") != -1)
     {
       document.forms[0].wind_lg.click();
     }
 
+    /* New Courseworks */
     if (location.href.indexOf("courseworks.columbia.edu/welcome/") != -1)
     {
-      location.href = document.getElementsByClassName("button")[0].href;
+      document.querySelector('.courseworks-login').click();
     }
 
     if ((location.href.indexOf("courseworks.columbia.edu/portal/relogin") != -1) ||
